@@ -113,7 +113,9 @@ sudo tcpdump -nn -r ~/network-project/evidence/network-capture.pcap 'tcp'
 
 ## Security Notes
 
-The packet capture contains networking metadata and is kept locally rather than uploaded publicly. Screenshots will be reviewed for sensitive information before being added to the repository.
+The packet capture contains networking metadata and is kept locally rather than uploaded publicly.
+
+Screenshots of the network connectivity tests and recovery have been added to this repository as supporting evidence. Sensitive information should be reviewed before any additional files are published.
 
 
 ## Network Failure Simulation and Recovery
