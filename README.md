@@ -112,3 +112,96 @@ Remaining tasks include documenting a controlled network outage and recovery, ad
 ## Security Notes
 
 The packet capture contains networking metadata and is kept locally rather than uploaded publicly. Screenshots will be reviewed for sensitive information before being added to the repository.
+
+
+## Network Failure Simulation and Recovery
+
+### Objective
+The purpose of this exercise was to simulate a network outage in an Ubuntu Linux virtual machine, identify the problem, restore connectivity, and verify that the network was working again.
+
+### Step 1: Verify Network Connectivity
+
+Before disconnecting the network, I checked the interface status and tested connectivity to the default gateway.
+
+Commands used:
+
+```bash
+ip -br link
+ping -c 4 10.0.2.2
+```
+
+Results:
+- Network interface `enp0s3` was UP.
+- 4 packets transmitted.
+- 4 packets received.
+- 0% packet loss.
+
+These results confirmed that the virtual machine could communicate with its default gateway.
+
+### Step 2: Simulate a Network Failure
+
+I intentionally disconnected the virtual network adapter using Oracle VirtualBox.
+
+Navigation:
+Devices > Network > Connect Network Adapter
+
+After disconnecting the adapter, I checked the network interface.
+
+```bash
+ip -br link
+```
+
+The network interface showed DOWN.
+
+I then attempted to ping the default gateway.
+
+```bash
+ping -c 4 10.0.2.2
+```
+
+Ubuntu returned the following error:
+
+```text
+ping: connect: Network is unreachable
+```
+
+This indicated that Ubuntu had no usable network route to the destination.
+
+### Step 3: Troubleshoot the Network Issue
+
+I investigated the problem by checking the interface status and reviewing the network configuration.
+
+I determined that the intentionally disconnected VirtualBox network adapter was responsible for the loss of connectivity.
+
+### Step 4: Restore Network Connectivity
+
+To resolve the issue, I reconnected the virtual network adapter through VirtualBox.
+
+I then repeated the connectivity test.
+
+```bash
+ping -c 4 10.0.2.2
+```
+
+Results:
+- 4 packets transmitted.
+- 4 packets received.
+- 0% packet loss.
+
+The successful test confirmed that connectivity to the default gateway had been restored.
+
+### Skills Demonstrated
+
+- Linux network troubleshooting
+- Network interface diagnostics
+- VirtualBox network configuration
+- ICMP connectivity testing
+- Identifying network failures
+- Troubleshooting and resolving connectivity issues
+- Verifying successful network recovery
+
+### Conclusion
+
+This hands-on exercise demonstrated the process of identifying, troubleshooting, and resolving a network connectivity issue in an Ubuntu Linux environment.
+
+By intentionally creating a network failure and restoring connectivity, I practiced troubleshooting techniques commonly used in IT help desk and entry-level cybersecurity positions.
