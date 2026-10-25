@@ -205,3 +205,20 @@ The successful test confirmed that connectivity to the default gateway had been 
 This hands-on exercise demonstrated the process of identifying, troubleshooting, and resolving a network connectivity issue in an Ubuntu Linux environment.
 
 By intentionally creating a network failure and restoring connectivity, I practiced troubleshooting techniques commonly used in IT help desk and entry-level cybersecurity positions.
+
+
+## Network Troubleshooting Screenshots
+
+### 1. Initial Network Connectivity Test
+
+This screenshot shows the Ubuntu virtual machine's network configuration and successful connectivity test before the simulated outage.
+
+![Initial Network Test](VirtualBox_ubunto%20lab_25_10_2026_12_38_55.png)
+
+### 2. Network Recovery Verification
+
+After reconnecting the VirtualBox network adapter, I tested connectivity again.
+
+The test confirmed that all four packets were received with 0% packet loss.
+
+![Network Restored](network-restored.png)
