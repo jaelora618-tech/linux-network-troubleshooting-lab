@@ -105,9 +105,11 @@ sudo tcpdump -nn -r ~/network-project/evidence/network-capture.pcap 'tcp'
 
 ## Project Status
 
-**In progress:** Baseline connectivity testing and packet analysis are complete.
+**Completed:** Network configuration, connectivity testing, DNS investigation, packet analysis, and simulated network failure and recovery.
 
-Remaining tasks include documenting a controlled network outage and recovery, adding sanitized screenshots, and reviewing evidence before publication.
+**Evidence:** Screenshots of the initial connectivity test and successful network recovery have been added to this repository.
+
+**Future Improvements:** Expand packet analysis and document additional troubleshooting scenarios.
 
 ## Security Notes
 
